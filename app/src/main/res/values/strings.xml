@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Base Architecture Demo</string>
+    <string name="error">Error</string>
+    <string name="error_loading_users">Error loading users: %1$s</string>
+    <string name="error_adding_user">Error adding user</string>
+    <string name="user_input">User input</string>
+    <string name="enter_user_name">Enter username</string>
+    <string name="adding_user">Adding user %1$s</string>
+    <string name="working">Working</string>
+</resources>
