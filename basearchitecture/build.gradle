@@ -1,4 +1,10 @@
+def versionCodeName = '1.0.RC1'
+
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.sourcerebels'
+version = versionCodeName
 
 android {
     compileSdkVersion 25
