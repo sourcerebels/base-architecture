@@ -5,9 +5,9 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
-import static android.content.ContentValues.TAG;
-
 public abstract class Interactor<Result> implements Runnable {
+
+    private static final String TAG = "Interactor";
 
     private final Executor executor;
     private final MainThread mainThread;
