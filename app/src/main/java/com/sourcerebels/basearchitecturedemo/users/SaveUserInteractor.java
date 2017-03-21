@@ -22,7 +22,7 @@ public class SaveUserInteractor extends Interactor<User> {
         this.userRepository = userRepository;
     }
 
-    public void execute(InteractorCallback<User> callback, String userName) {
+    public void execute(String userName, InteractorCallback<User> callback) {
         this.userName = userName;
         super.execute(callback);
     }

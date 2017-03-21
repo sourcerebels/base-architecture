@@ -43,7 +43,7 @@ public class UsersPresenter extends Presenter<UsersPresenter.View> {
     }
 
     public void saveUser(String userName) {
-        saveUserInteractor.execute(new InteractorCallback<User>() {
+        saveUserInteractor.execute(userName, new InteractorCallback<User>() {
             @Override
             public void onExecutionSuccess(User user) {
                 View view = getView();
@@ -59,7 +59,7 @@ public class UsersPresenter extends Presenter<UsersPresenter.View> {
                     view.onUserSaveError(error.getMessage());
                 }
             }
-        }, userName);
+        });
     }
 
     public interface View extends BaseView {
