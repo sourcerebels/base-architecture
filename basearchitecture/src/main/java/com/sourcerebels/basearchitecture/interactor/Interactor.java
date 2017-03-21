@@ -20,6 +20,11 @@ public abstract class Interactor<Result> implements Runnable {
 
     public abstract Result runOnBackground() throws InteractorExecutionException;
 
+    public void execute(InteractorCallback<Result> callback) {
+        this.callback = new WeakReference<>(callback);
+        executor.run(this);
+    }
+
     @Override
     public void run() {
         try {
@@ -28,11 +33,6 @@ public abstract class Interactor<Result> implements Runnable {
             Log.d(TAG, "run: There was an error executing interactor", e);
             postError(e);
         }
-    }
-
-    public void execute(InteractorCallback<Result> callback) {
-        this.callback = new WeakReference<>(callback);
-        executor.run(this);
     }
 
     private void postResult(final Result result) {
